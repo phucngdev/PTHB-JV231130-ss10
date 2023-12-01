@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Máy Tính</title>
+      <style>
+        #print {
+          width: 250px;
+          height: 30px;
+        }
+        .button {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+          margin: 5px;
+        }
+      </style>
+    </head>
+    <body>
+      <input type="text" id="print" disabled /><br />
+      <button class="button" onclick="addValue('1')">7</button>
+      <button class="button" onclick="addValue('2')">8</button>
+      <button class="button" onclick="addValue('3')">9</button>
+      <button class="button" onclick="addValue('+')">+</button><br />
+      <button class="button" onclick="addValue('4')">4</button>
+      <button class="button" onclick="addValue('5')">5</button>
+      <button class="button" onclick="addValue('6')">6</button>
+      <button class="button" onclick="addValue('-')">-</button><br />
+      <button class="button" onclick="addValue('7')">1</button>
+      <button class="button" onclick="addValue('8')">2</button>
+      <button class="button" onclick="addValue('9')">3</button>
+      <button class="button" onclick="addValue('*')">*</button><br />
+      <button class="button" onclick="clear()">C</button>
+      <button class="button" onclick="addValue('0')">0</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button" onclick="addValue('/')">/</button>
+      <script>
+        function addValue(value) {
+          document.getElementById("print").value += value;
+        }
+
+        function calculate() {
+          var value = document.getElementById("print").value;
+          var result = eval(value);
+          document.getElementById("print").value = result;
+        }
+
+        function clear() {
+          document.getElementById("print").value = "";
+        }
+      </script>
+    </body>
+  </html>
+</html>
